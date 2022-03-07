@@ -24,22 +24,16 @@ for i in gammaRate:
         epsilonRate[index] = 1
     index += 1
 
-gammaRateBin = ''.join([str(elem) for elem in gammaRate])
-epsilonRateBin = ''.join([str(elem) for elem in epsilonRate])
-
-print(gammaRateBin)
-print(epsilonRateBin)
-
 def converter(param):
     count = 0
     exponent = len(param)-1
     for bit in param:
-        if bit == "1":
+        if bit == 1:
             count += pow(2, exponent)
         exponent -= 1
     return count
 
-gammaRate = converter(gammaRateBin)
-epsilonRate = converter(epsilonRateBin)
+gammaRate = converter(gammaRate)
+epsilonRate = converter(epsilonRate)
 
 print(gammaRate * epsilonRate)   
